@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: plot-listing
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: plot-listing
+
+  template:
+    metadata:
+      labels:
+        app: plot-listing
+
+    spec:
+      containers:
+      - name: plot-listing
+
+        image: aa3000/plot-listing:001
+
+        ports:
+        - containerPort: 80
